@@ -1,0 +1,11 @@
+@layout('layouts/main')
+
+@section('main')
+<h1>home</h1>
+{{-- <a href="{{route('/logout')}}">Sair</a> --}}
+<form method="POST" action="{{ route('/logout')}}">
+  <button type="submit" class="logout-button">
+    sair
+  </button>
+</form>
+@end

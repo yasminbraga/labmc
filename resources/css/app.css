@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --font-size: 14px;
+  --primary-color: #2d6a4f;
+  --light-gray: rgba(0, 0, 0, 0.06);
+  --box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+html,
+body {
+  background-color: #f9f9f9;
+  height: 100vh;
+  color: #46444ca2;
+}
+
+main.login-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  height: 70%;
+  margin: 0 2rem;
+}
+
+.card-logo {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: linear-gradient(rgba(45, 106, 79, 0.6), rgba(45, 106, 79, 0.6)),
+    url(../../public/images/background.png) no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-form {
+  width: 100%;
+  padding: 2rem;
+}
+
+.card-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+/* INPUT */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.field label {
+  font-size: var(--font-size);
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.field .input-container {
+  border: none;
+  background-color: var(--light-gray);
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  transition: all 0.2s;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+}
+
+.field .input-container::placeholder {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+}
+
+.field .input-container:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px -2px var(--primary-color);
+  border: 1px solid rgba(45, 106, 79, 0.3);
+}
+
+/* BUTTON */
+.btn {
+  border: none;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+
+  background-color: var(--primary-color);
+  color: #f9f9f9;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 900px) {
+  .card-container {
+    flex-direction: row;
+    max-width: 600px;
+    height: 40%;
+  }
+}
+
+@media (min-width: 1200px) {
+}
