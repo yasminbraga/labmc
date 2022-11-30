@@ -12,15 +12,22 @@
   --primary-color: #2d6a4f;
   --light-gray: rgba(0, 0, 0, 0.06);
   --box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.2);
+  --sidebar-width: 200px;
 }
 
 html,
 body {
   background-color: #f9f9f9;
   height: 100vh;
-  color: #46444ca2;
+  color: #46444c;
 }
 
+main.container {
+  flex: 1;
+  height: 100%;
+}
+
+/* LOGIN */
 main.login-container {
   height: 100%;
   display: flex;
@@ -120,6 +127,32 @@ main.login-container {
   opacity: 0.9;
 }
 
+/* SIDEBAR */
+section.sidebar {
+  background-color: #fff;
+  width: var(--sidebar-width);
+  height: 100%;
+  position: fixed;
+  left: -200px;
+  z-index: 3;
+  transition: all 0.3s;
+}
+.sidebar-overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(3px);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: none;
+}
+
+section.content {
+  padding: 1.25rem;
+}
+
 @media (min-width: 900px) {
   .card-container {
     flex-direction: row;
@@ -129,4 +162,17 @@ main.login-container {
 }
 
 @media (min-width: 1200px) {
+  section.sidebar {
+    left: 0;
+  }
+
+  #close-sidebar,
+  #show-sidebar {
+    display: none;
+  }
+
+  header.main-header,
+  .main-content {
+    margin-left: 200px;
+  }
 }

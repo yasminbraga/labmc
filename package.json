@@ -64,6 +64,7 @@
     "@adonisjs/session": "^6.4.0",
     "@adonisjs/shield": "^7.0.0",
     "@adonisjs/view": "^6.1.0",
+    "feather-icons": "^4.29.0",
     "luxon": "^3.0.4",
     "pg": "^8.8.0",
     "phc-argon2": "^1.1.3",

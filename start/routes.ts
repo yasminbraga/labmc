@@ -30,3 +30,7 @@ Route.post('/logout', async ({ auth, response }) => {
 Route.get('/', async ({ view }) => {
   return view.render('home')
 }).middleware(['auth'])
+
+Route.get('/landing', async ({ view }) => {
+  return view.render('landing')
+})
