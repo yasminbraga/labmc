@@ -1,0 +1,24 @@
+<section class="sidebar">
+
+  <header>
+    <h1>LabMC</h1>
+    <button type="button" id="close-sidebar">
+      <i data-feather="chevron-left"></i>
+    </button>
+  </header>
+
+  <nav>
+    <a href="#" class="nav-link">Time</a>
+    <a href="#" class="nav-link">Projetos</a>
+  </nav>
+
+  <footer>
+    <form method="POST" action="{{ route('/logout')}}">
+      <button type="submit" class="logout-button">
+        sair
+        <i data-feather="log-out"></i>
+      </button>
+    </form>
+  </footer>
+</section>
+<div class="sidebar-overlay"></div>
