@@ -1,0 +1,28 @@
+@layout('layouts/main')
+
+@section('main')
+<header>
+
+</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Lattes</th>
+      <th>Curso</th>
+    </tr>
+  </thead>
+  <tbody>
+    @each(member in members)
+    <tr>
+      <th>{{member.name}}</th>
+      <th>{{member.email}}</th>
+      <th>{{member.lattes}}</th>
+      <th>{{member.course}}</th>
+    </tr>
+    @endeach
+  </tbody>
+</table>
+@endsection

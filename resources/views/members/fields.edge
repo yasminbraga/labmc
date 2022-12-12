@@ -1,0 +1,70 @@
+@!textField({
+name: 'name',
+id: 'name',
+label: 'Nome',
+value: flashMessages.get('name') || member?.name || '',
+})
+
+@!textField({
+name: 'email',
+id: 'email',
+value: flashMessages.get('email') || member?.email || '',
+label: 'Email'
+})
+
+@!textField({
+name: 'lattes',
+id: 'lattes',
+value: flashMessages.get('lattes') || member?.lattes || '',
+label: 'Lattes'
+})
+
+<section class="field">
+  <label for="type">Tipo</label>
+  <select class="input-container" name="type" id="type">
+    <option value="">Selecione</option>
+    <option value="researcher" {{member && member.type==='researcher' ? 'selected' : '' }}>Pesquisador</option>
+    <option value="graduation" {{member && member.type==='graduation' ? 'selected' : '' }}>Graduação</option>
+    <option value="master" {{member && member.type==='master' ? 'selected' : '' }}>Mestrado</option>
+    <option value="doctorate" {{member && member.type==='doctorate' ? 'selected' : '' }}>Doutorado</option>
+    <option value="egress" {{member && member.type==='egress' ? 'selected' : '' }}>Egresso</option>
+    <option value="technician" {{member && member.type==='technician' ? 'selected' : '' }}>Técnico</option>
+  </select>
+  @if(flashMessages.has('errors.type'))
+  <p class="field-error">
+    {{flashMessages.get('errors.type')}}
+  </p>
+  @endif
+</section>
+
+@!textField({
+name: 'course',
+id: 'course',
+value: flashMessages.get('course') || member?.course || '',
+label: 'Curso'
+})
+
+@!textField({
+name: 'year',
+id: 'year',
+value: flashMessages.get('year') || member?.year || '',
+label: 'Ano'
+})
+
+@!textField({
+name: 'institution',
+id: 'institution',
+value: flashMessages.get('institution') || member?.institution || '',
+label: 'Instituição'
+})
+
+<section class="field">
+  <label for="description">Descrição</label>
+  <textarea class="input-container" name="description" id="description"
+    placeholder="Breve descrição sobre área de pesquisa ou trabalho">{{flashMessages.get('description') || member?.description || ''}}</textarea>
+  @if(flashMessages.has('errors.description'))
+  <p class="field-error">
+    {{flashMessages.get('errors.description')}}
+  </p>
+  @endif
+</section>
