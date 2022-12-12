@@ -27,8 +27,11 @@ Route.post('/logout', async ({ auth, response }) => {
   response.redirect('/login')
 })
 
-Route.get('/', async ({ view }) => {
-  return view.render('home')
+Route.group(() => {
+  Route.get('/', async ({ view }) => {
+    return view.render('home')
+  })
+  Route.resource('members', 'MembersController')
 }).middleware(['auth'])
 
 Route.get('/landing', async ({ view }) => {

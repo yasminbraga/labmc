@@ -1,0 +1,13 @@
+@layout('layouts/main')
+
+@section('main')
+
+<div class="card">
+  <h1>Adicionar membro da equipe</h1>
+
+  <form action="{{ route('MembersController.store') }}" method="post">
+    @include('members/fields')
+    <button>Salvar</button>
+  </form>
+</div>
+@end

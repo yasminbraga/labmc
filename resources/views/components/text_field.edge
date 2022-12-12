@@ -1,0 +1,9 @@
+<section class="field">
+  <label for="{{id}}">{{label}}</label>
+  <input class="input-container" type="text" name="{{name}}" placeholder="{{label}}" id="{{id}}" value="{{value}}">
+  @if( flashMessages.has(`errors.${name}`))
+  <p class="field-error">
+    {{flashMessages.get(`errors.${name}`)}}
+  </p>
+  @endif
+</section>

@@ -1,0 +1,13 @@
+@layout('layouts/main')
+
+@section('main')
+
+<div class="card">
+  <h1>Adicionar membro da equipe</h1>
+
+  <form action="{{ route('MembersController.update', {id: member.id}) }}?_method=PUT" method="post">
+    @include('members/fields')
+    <button>Salvar</button>
+  </form>
+</div>
+@end

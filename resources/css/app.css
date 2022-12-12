@@ -27,6 +27,12 @@ main.container {
   height: 100%;
 }
 
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* LOGIN */
 main.login-container {
   height: 100%;
@@ -151,6 +157,16 @@ section.sidebar {
 
 section.content {
   padding: 1.25rem;
+}
+
+/* CARD */
+.card {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  margin: 2rem;
 }
 
 @media (min-width: 900px) {
