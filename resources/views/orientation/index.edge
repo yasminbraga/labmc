@@ -1,0 +1,41 @@
+@layout('layouts/main')
+
+@section('main')
+{{-- <header>
+  <h1>Orientações</h1>
+</header> --}}
+
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Tipo</th>
+      <th>Aluno</th>
+      <th>Orientador</th>
+      <th>Segundo orientador</th>
+      <th>Período</th>
+      <th>Fomento</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @each(orientation in orientations)
+    <tr>
+      <td>{{orientation.title}}</td>
+      <td>{{orientation.type}}</td>
+      <td>{{orientation.student.name}}</td>
+      <td>{{orientation.advisor.name}}</td>
+      <td>{{orientation.secondaryAdvisor ? orientation.secondaryAdvisor.name : '-'}}</td>
+      <td>{{orientation.period}}</td>
+      <td>{{orientation.fomentation ?? '-'}}</td>
+      <td>
+        <a href="{{route('OrientationsController.edit', {id: orientation.id})}}">editar</a>
+        <form action="{{route('OrientationsController.destroy', {id: orientation.id})}}?_method=DELETE" method="post">
+          <button>Deletar</button>
+        </form>
+      </td>
+    </tr>
+    @endeach
+  </tbody>
+</table>
+@endsection
