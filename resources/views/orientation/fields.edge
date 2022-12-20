@@ -1,0 +1,89 @@
+<section class="field">
+  <label for="type">Tipo</label>
+  <select class="input-container" name="type" id="type">
+    <option value="">Selecione</option>
+    <option value="finalPaper" {{orientation && orientation.type==='finalPaper' ? 'selected' : '' }}>TCC</option>
+    <option value="undergraduateResearch" {{orientation && orientation.type==='undergraduateresearch' ? 'selected' : ''
+      }}>
+      Iniciação Cientícia
+    </option>
+    <option value="thesis" {{orientation && orientation.type==='thesis' ? 'selected' : '' }}>Tese</option>
+    <option value="dissertation" {{orientation && orientation.type==='dissertation' ? 'selected' : '' }}>Dissertação
+    </option>
+  </select>
+  @if(flashMessages.has('errors.type'))
+  <p class="field-error">
+    {{flashMessages.get('errors.type')}}
+  </p>
+  @endif
+</section>
+
+<section class="field">
+  <label for="student-id">Aluno</label>
+  <select class="input-container" name="studentId" id="student-id">
+    <option value="">Selecione</option>
+    @each(student in students)
+    <option value="{{student.id}}" {{orientation && orientation.studentId===student.id ? 'selected' : '' }}>
+      {{student.name}}</option>
+    @endeach
+  </select>
+  @if(flashMessages.has('errors.studentId'))
+  <p class="field-error">
+    {{flashMessages.get('errors.studentId')}}
+  </p>
+  @endif
+</section>
+
+<section class="field">
+  <label for="advisor-id">Orientador</label>
+  <select class="input-container" name="advisorId" id="advisor-id">
+    <option value="">Selecione</option>
+    @each(advisor in advisors)
+    <option value="{{advisor.id}}" {{orientation && orientation.advisorId===advisor.id ? 'selected' : '' }}>
+      {{advisor.name}}</option>
+    @endeach
+  </select>
+  @if(flashMessages.has('errors.advisorId'))
+  <p class="field-error">
+    {{flashMessages.get('errors.advisorId')}}
+  </p>
+  @endif
+</section>
+
+<section class="field">
+  <label for="secondary-advisor-id">Orientador Secundário</label>
+  <select class="input-container" name="secondaryAdvisorId" id="secondary-advisor-id">
+    <option value="">Selecione</option>
+    @each(advisor in advisors)
+    <option value="{{advisor.id}}" {{orientation && orientation.secondaryAdvisorId===advisor.id ? 'selected' : '' }}>
+      {{advisor.name}}</option>
+    @endeach
+  </select>
+</section>
+
+@!textField({
+name: 'title',
+id: 'title',
+label: 'Título do trabalho',
+value: flashMessages.get('title') || orientation?.title || '',
+})
+
+@!textField({
+name: 'period',
+id: 'period',
+value: flashMessages.get('period') || orientation?.period || '',
+label: 'Período'
+})
+
+@!textField({
+name: 'fomentation',
+id: 'fomentation',
+value: flashMessages.get('fomentation') || orientation?.fomentation || '',
+label: 'Fomento'
+})
+
+<section>
+  <input type="checkbox" name="isCompleted" id="is-completed" {{orientation && orientation.isCompleted ? 'checked' : ''
+    }}>
+  <label for="is-completed">Concluído</label>
+</section>

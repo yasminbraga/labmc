@@ -32,6 +32,7 @@ Route.group(() => {
     return view.render('home')
   })
   Route.resource('members', 'MembersController')
+  Route.resource('orientations', 'OrientationsController')
 }).middleware(['auth'])
 
 Route.get('/landing', async ({ view }) => {
