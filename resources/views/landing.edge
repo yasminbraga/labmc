@@ -12,16 +12,107 @@
 
 <body>
   <main>
-    <header>
-
+    <header class="landing-header">
+      <img src="/images/logo.png" alt="Logo Labmc">
       <section class="links">
-        <a href="">Home</a>
-        <a href="">LabMC</a>
+        <a href="" class="link">Home</a>
+
+        <div class="dropdown">
+          <button type="button" class="link" href="">
+            LabMC
+            <i data-feather="chevron-down"></i>
+          </button>
+
+          <div class="menu">
+            <a href="">documentos</a>
+            <a href="">equipe</a>
+          </div>
+
+        </div>
+
+        <div class="dropdown">
+          <button type="button" class="link" href="">
+            Orientações
+            <i data-feather="chevron-down"></i>
+          </button>
+
+          <div class="menu">
+            <a href="">documentos</a>
+            <a href="">equipe</a>
+          </div>
+
+        </div>
       </section>
     </header>
+
     <section class="banner">
+      <h1>Laboratório de Modelagem Computacional</h1>
+      <p>Universidade Federal do Oeste do Pará | Instituto de Engenharia e Geociências | Programa de Ciência e
+        Tecnologia</p>
     </section>
+
+    <section class="landing-section">
+      <h3>Conheça o LabMC</h3>
+      <div>
+
+        <p>
+          O Laboratório de Modelagem Computacional (LabMC), vinculado ao
+          Programa de Ciência e Tecnologia (PC&T), do Instituto de Engenharia e Geociências (IEG) ocupa uma área de 36
+          metros quadrados e contribui com o desenvolvimento científico e tecnológico da UFOPA.
+
+        </p>
+
+      </div>
+      {{-- FOTOS DO LABMC --}}
+    </section>
+
+
+    <section class="landing-section-center">
+      <h2>Áreas de pesquisa</h2>
+
+      <p>O laboratório fornece recursos computacionais necessários às disciplinas do PC&T e demais programas do IEG e ao
+        desenvolvimento de projetos de ensino, pesquisa e extensão.</p>
+
+      {{-- CARD COM AREAS DE PESQUISA --}}
+
+      <div class="card">
+        <i data-feather="droplet"></i>
+        <p>Dinâmica dos Fluidos computacional (DFC)</p>
+      </div>
+
+      <div class="card">
+        <i data-feather="server"></i>
+        <p>processamento em paralelo através da API CUDA, da NVIDIA.</p>
+      </div>
+    </section>
+
+    <section class="landing-section">
+      <h3>Localização</h3>
+      <div class="landing-info">
+        <div>
+          <p>O Laboratório está localizado no bloco 26 da Universidade Federal do Oeste do Pará Campus Santarém,
+            na Unidade Tapajós - Av. Vera Paz, s/n, 68035110
+          </p>
+        </div>
+
+        <div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.2598273836006!2d-54.74187808478422!3d-2.420061538597383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9288f9df3099584d%3A0x8468ff1e8ffd2eae!2sLabMC%20-%20UFOPA!5e0!3m2!1spt-BR!2sbr!4v1672081050391!5m2!1spt-BR!2sbr"
+            width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+
+    </footer>
   </main>
+
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    feather.replace()
+  </script>
 </body>
 
 </html>
