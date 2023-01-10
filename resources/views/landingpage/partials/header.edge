@@ -1,0 +1,55 @@
+<header class="landing-header">
+  <img src="/images/logo.png" alt="Logo Labmc" class="logo">
+  <section class="links">
+    <div class="menu">
+      <ul>
+        <li class="main-menu">
+          <a href="/landing">Home</a>
+        </li>
+        <li class="main-menu">
+          <a>
+            LabMC
+            <i class="feather-16" data-feather="chevron-down"></i>
+          </a>
+          <ul class="sub-menu">
+            <li>
+              <a href="">
+                <i class="feather-16" data-feather="chevron-left"></i>
+                Equipe
+              </a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="{{route('/public/members', {}, {qs: {type: 'researcher'}})}}">Pesquisadores</a>
+                </li>
+                <li>
+                  <a href="{{route('/public/members', {}, {qs: {type: 'graduation'}})}}">Graduação</a>
+                </li>
+                <li>
+                  <a href="{{route('/public/members', {}, {qs: {type: 'technician'}})}}">Técnicos</a>
+                </li>
+                <li>
+                  <a href="{{route('/public/members', {}, {qs: {type: 'master'}})}}">Mestrado</a>
+                </li>
+                <li>
+                  <a href="{{route('/public/members', {}, {qs: {type: 'doctorate'}})}}">Doutorado</a>
+                </li>
+                <li>
+                  <a href="{{route('/public/members', {}, {qs: {type: 'egress'}})}}">Egressos</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="">Documentos</a>
+              <ul class="sub-menu">
+                <li><a href="">Professores</a></li>
+                <li><a href="">Alunos</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+</header>

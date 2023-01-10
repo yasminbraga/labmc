@@ -1,0 +1,33 @@
+@layout('landingpage/layout')
+
+@section('container')
+<div class="content">
+
+  <h1>{{type}}</h1>
+
+  <section class="grid">
+    @each(member in members)
+    <div class="card-member">
+      <div class="avatar">
+        <i class="feather-28 feather-white" data-feather="user"></i>
+      </div>
+
+      <div class="flex-align-center">
+        <h3>{{member.name}}</h3>
+        <a href={{member.lattes}}>
+          <img class="icon-img" src="/images/lattes.png" alt="lattes">
+        </a>
+      </div>
+
+      <p class="text-gray">{{member.course}} ({{member.institution}}) {{member.year}}</p>
+      <p class="text-center">{{member.description}}</p>
+
+      <div class="flex-align-center">
+        <i class="feather-green" data-feather="mail"></i>
+        <span class="text-green bold-500">{{member.email}}</span>
+      </div>
+    </div>
+    @endeach
+  </section>
+</div>
+@endsection
