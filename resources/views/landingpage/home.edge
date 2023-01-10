@@ -1,0 +1,63 @@
+@layout('landingpage/layout')
+
+@section('container')
+<section class="banner">
+  <h1>Laboratório de Modelagem Computacional</h1>
+  <p>Universidade Federal do Oeste do Pará | Instituto de Engenharia e Geociências | Programa de Ciência e
+    Tecnologia</p>
+</section>
+
+<section class="landing-section">
+  <h2>Conheça o LabMC</h2>
+  <div>
+
+    <p class="landing-text">
+      O Laboratório de Modelagem Computacional (LabMC), vinculado ao
+      Programa de Ciência e Tecnologia (PC&T), do Instituto de Engenharia e Geociências (IEG) ocupa uma área de 36
+      metros quadrados e contribui com o desenvolvimento científico e tecnológico da UFOPA.
+
+    </p>
+
+  </div>
+  {{-- FOTOS DO LABMC --}}
+</section>
+
+
+<section class="landing-section-center">
+  <h2>Áreas de pesquisa</h2>
+
+  <p class="landing-text">O laboratório fornece recursos computacionais necessários às disciplinas do PC&T e
+    demais
+    programas do IEG e ao
+    desenvolvimento de projetos de ensino, pesquisa e extensão.</p>
+
+  {{-- CARD COM AREAS DE PESQUISA --}}
+
+  <div class="area-cards">
+    <div class="area-card">
+      <i data-feather="droplet"></i>
+      <p>Dinâmica dos Fluidos computacional (DFC)</p>
+    </div>
+
+    <div class="area-card">
+      <i data-feather="server"></i>
+      <p>Processamento em paralelo através da API CUDA, da NVIDIA</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="landing-section">
+  <h2>Localização</h2>
+  <div class="landing-info">
+    <p class="landing-text">O Laboratório está localizado no bloco 26 da Universidade Federal do Oeste do Pará,
+      Campus Santarém,
+      na Unidade Tapajós - Av. Vera Paz, s/n, 68035110
+    </p>
+
+    <iframe class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.2598273836006!2d-54.74187808478422!3d-2.420061538597383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9288f9df3099584d%3A0x8468ff1e8ffd2eae!2sLabMC%20-%20UFOPA!5e0!3m2!1spt-BR!2sbr!4v1672081050391!5m2!1spt-BR!2sbr"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+@endsection

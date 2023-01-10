@@ -36,5 +36,11 @@ Route.group(() => {
 }).middleware(['auth'])
 
 Route.get('/landing', async ({ view }) => {
-  return view.render('landing')
+  return view.render('landingpage/home')
 })
+
+Route.group(() => {
+  Route.get('members', 'MembersController.index')
+})
+  .namespace('App/Controllers/Http/Public')
+  .prefix('public')
