@@ -334,9 +334,13 @@ a.link {
   padding: 2rem;
 }
 
+.section-title {
+  margin-bottom: 1rem;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
@@ -403,6 +407,10 @@ a.link {
     max-width: 600px;
     height: 40%;
   }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -434,5 +442,9 @@ a.link {
 
   .landing-text {
     font-size: 22px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

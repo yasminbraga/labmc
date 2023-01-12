@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, scope } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, computed, scope } from '@ioc:Adonis/Lucid/Orm'
+import { translateMemberType } from 'App/utils/translate'
 
 export default class Member extends BaseModel {
   @column({ isPrimary: true })
@@ -38,4 +39,9 @@ export default class Member extends BaseModel {
   public static findByType = scope((query, type) => {
     if (type) query.where('type', type)
   })
+
+  @computed()
+  public get translatedType() {
+    return translateMemberType(this.type)
+  }
 }

@@ -1,5 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Member from 'App/Models/Member'
+import { translateMemberType } from 'App/utils/translate'
 
 export default class MembersController {
   public async index({ view, session, response, request }: HttpContextContract) {
@@ -9,10 +10,10 @@ export default class MembersController {
       const members = await Member.query().apply((scopes) => {
         scopes.findByType(type)
       })
-
+      const translatedType = translateMemberType(type)
       return view.render('landingpage/members', {
         members: members.map((member) => member.toJSON()),
-        type,
+        translatedType,
       })
     } catch (error) {
       console.error(error)
