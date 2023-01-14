@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
-import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, belongsTo, column, computed, scope } from '@ioc:Adonis/Lucid/Orm'
 import Member from './Member'
+import { translateOrientationType } from 'App/utils/translate'
 
 export default class Orientation extends BaseModel {
   @column({ isPrimary: true })
@@ -45,4 +46,13 @@ export default class Orientation extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  public static findByType = scope((query, type) => {
+    if (type) query.where('type', type)
+  })
+
+  @computed()
+  public get translatedType() {
+    return translateOrientationType(this.type)
+  }
 }

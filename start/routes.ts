@@ -41,6 +41,7 @@ Route.get('/landing', async ({ view }) => {
 
 Route.group(() => {
   Route.get('members', 'MembersController.index')
+  Route.get('orientations', 'OrientationsController.index')
 })
   .namespace('App/Controllers/Http/Public')
   .prefix('public')
