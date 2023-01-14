@@ -10,3 +10,14 @@ export const translateMemberType = (type) => {
 
   return translation[type]
 }
+
+export const translateOrientationType = (type) => {
+  const translation = {
+    finalPaper: 'Projetos Finais',
+    undergraduateResearch: 'Iniciação científica',
+    thesis: 'Teses',
+    dissertation: 'Dissertações',
+  }
+
+  return translation[type]
+}

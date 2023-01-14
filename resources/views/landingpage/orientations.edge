@@ -1,0 +1,37 @@
+@layout('landingpage/layout')
+
+@section('container')
+<div class="content">
+  <h3 class="section-title">{{translatedType}}</h3>
+  <section class="list">
+    @each(orientation in orientations)
+    <div class="icon-container">
+      <i class="feather-28 feather-green" data-feather="file-text"></i>
+
+      <section class="icon-container-info">
+        <h3 class="text-green">{{orientation.title}}</h3>
+        <p><span class="bold-600">{{orientation.student.name}} ({{orientation.student.year}})</span>,
+          {{orientation.student.course}},
+          {{orientation.student.institution}} </p>
+
+        <p><span class="bold-600">Orientador:</span> {{orientation.advisor.name}} ({{orientation.advisor.institution}})
+        </p>
+
+        @if(orientation.secondaryAdvisor)
+        <p><span class="bold-600">Coorientador:</span> {{orientation.secondaryAdvisor.name}}
+          ({{orientation.secondaryAdvisor.institution}})</p>
+        @endif
+
+        @if(orientation.type === 'undergraduateResearch')
+        <p>{{orientation.fomentation}}</p>
+        @endif
+
+        <div class="status-container {{orientation.is_completed ? 'completed' : 'not-completed'}}">
+          {{orientation.is_completed
+          ? 'Concluída' : 'Em andamento'}}</div>
+      </section>
+    </div>
+    @endeach
+  </section>
+</div>
+@endsection

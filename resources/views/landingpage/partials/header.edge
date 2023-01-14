@@ -48,8 +48,40 @@
             </li>
           </ul>
         </li>
+
+        <li class="main-menu">
+          <a>
+            Orientações
+            <i class="feather-16" data-feather="chevron-down"></i>
+          </a>
+          <ul class="sub-menu">
+            <li>
+              <a>
+                <i class="feather-16" data-feather="chevron-left"></i>
+                Graduação
+              </a>
+              <ul class="sub-menu">
+                <li><a href="{{route('/public/orientations', {}, {qs: {type: 'undergraduateResearch'}})}}">Iniciação
+                    Científica</a>
+                </li>
+                <li><a href="{{route('/public/orientations', {}, {qs: {type: 'finalPaper'}})}}">Projetos finais</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a>
+                <i class="feather-16" data-feather="chevron-left"></i>
+                Pós-graduação
+              </a>
+              <ul class="sub-menu">
+                <li><a href="{{route('/public/orientations', {}, {qs: {type: 'thesis'}})}}">Mestrado</a></li>
+                <li><a href="{{route('/public/orientations', {}, {qs: {type: 'dissertation'}})}}">Doutorado</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
       </ul>
     </div>
-
   </section>
 </header>
