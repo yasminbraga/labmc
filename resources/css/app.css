@@ -209,6 +209,10 @@ img.logo {
   font-size: 2rem;
 }
 
+.photo {
+  width: 100%;
+}
+
 .landing-section {
   display: flex;
   flex-direction: column;
@@ -224,7 +228,6 @@ img.logo {
 
 .landing-section-center {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   padding: 2rem;
@@ -235,6 +238,12 @@ img.logo {
 
 .landing-text {
   text-align: center;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .links {
@@ -327,6 +336,47 @@ a.link {
 .menu ul.sub-menu .sub-menu {
   top: -0.5em;
   right: 100%;
+}
+
+/* FOOTER - LANDING */
+footer {
+  background-color: #071e02;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #1ea71c;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.social-container + .social-container {
+  margin-top: 1rem;
+}
+
+.footer-mention {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 /* LIST MEMBERS */
@@ -485,10 +535,23 @@ a.link {
   }
 
   .landing-text {
-    font-size: 22px;
+    text-align: left;
+    font-size: 20px;
+    padding: 3rem 4rem;
   }
 
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .section-content {
+    flex-direction: row;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
