@@ -301,6 +301,7 @@ a.link {
 
 .menu li:hover > a {
   color: #1ea71c;
+  transition: all 0.3s;
 }
 
 .menu ul li.main-menu {
@@ -311,7 +312,7 @@ a.link {
   display: none;
   position: absolute;
   background-color: #045603;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .menu .main-menu a {
@@ -332,10 +333,13 @@ a.link {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
-
 .menu ul.sub-menu .sub-menu {
   top: -0.5em;
   right: 100%;
+}
+
+.menu ul.sub-menu a {
+  margin-bottom: 0.5rem;
 }
 
 /* FOOTER - LANDING */
