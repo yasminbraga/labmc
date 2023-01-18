@@ -1,22 +1,35 @@
 <section class="sidebar">
+  <header class="sidebar-header">
+    <img src="/images/logo.png" alt="Logo Labmc" class="logo">
 
-  <header>
-    <h1>LabMC</h1>
     <button type="button" id="close-sidebar">
       <i data-feather="chevron-left"></i>
     </button>
   </header>
 
-  <nav>
-    <a href="#" class="nav-link">Time</a>
-    <a href="#" class="nav-link">Projetos</a>
+  <nav class="sidebar-links">
+    <a href="{{route('/members')}}" class="nav-link">
+      <i data-feather="users" class="feather-16"></i>
+      Time
+    </a>
+    <a href="{{route('/orientations')}}" class="nav-link">
+      <i data-feather="file-text" class="feather-16"></i>
+      Projetos
+    </a>
   </nav>
 
-  <footer>
+  <footer class="sidebar-footer">
+    <div class="user-content">
+      <span class="circle">
+        <i data-feather="user" class="feather-white feather-16"></i>
+      </span>
+      <h5>{{ auth?.user?.name || '-' }}</h5>
+    </div>
+
     <form method="POST" action="{{ route('/logout')}}">
       <button type="submit" class="logout-button">
         sair
-        <i data-feather="log-out"></i>
+        <i data-feather="log-out" class="feather-16"></i>
       </button>
     </form>
   </footer>

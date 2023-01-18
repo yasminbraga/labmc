@@ -31,6 +31,7 @@ main.container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1.5rem;
 }
 
 /* ICONS */
@@ -147,6 +148,7 @@ section.sidebar {
   left: -200px;
   z-index: 3;
   transition: all 0.3s;
+  border-right: 1px solid #eee;
 }
 .sidebar-overlay {
   position: fixed;
@@ -172,6 +174,112 @@ section.content {
   max-width: 400px;
   padding: 2rem;
   margin: 2rem;
+}
+
+/* NAVBAR */
+.sidebar-header {
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+button#close-sidebar {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #071e02;
+}
+
+nav.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+nav.sidebar-links a {
+  text-decoration: none;
+  color: #071e02;
+  font-weight: 500;
+  transition: all 0.3s;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+nav.sidebar-links a.highlight {
+  background-color: #c5edac;
+  color: #045603;
+}
+
+nav.sidebar-links a:hover {
+  color: #1ea71c;
+}
+
+.sidebar-footer {
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  width: 200px;
+}
+
+.user-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.circle {
+  background-color: #071e02;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-button {
+  border: none;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: rgba(230, 57, 70, 0.3);
+  color: #e63946;
+  border: 1px solid transparent;
+  width: 100%;
+}
+
+.logout-button:hover {
+  border: 1px solid #e63946;
+}
+
+.main-header {
+  padding: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+#show-sidebar,
+.destroy-btn {
+  background-color: transparent;
+  border: none;
 }
 
 /* LANDINGPAGE */
@@ -344,7 +452,7 @@ a.link {
 }
 
 /* FOOTER - LANDING */
-footer {
+footer.landing-footer {
   background-color: #071e02;
   color: #fff;
   padding: 2rem;
@@ -432,12 +540,21 @@ footer {
   height: 48px;
 }
 
+.feather-16 {
+  width: 16px;
+  height: 16px;
+}
+
 .feather-white {
   color: #fff;
 }
 
 .feather-green {
   color: #045603;
+}
+
+.feather-red {
+  color: #e63946;
 }
 
 .text-gray {
@@ -500,6 +617,95 @@ footer {
   color: #ff9914;
 }
 
+/* TABLE */
+table {
+  width: 100%;
+  background-color: #ffff;
+  border-radius: var(--bg-border-radius);
+  box-shadow: var(--box-shadow);
+  font-size: 14px;
+}
+
+table,
+th,
+td {
+  padding: 0.75rem;
+  border-collapse: collapse;
+  text-transform: capitalize;
+}
+
+table thead {
+  background-color: #e5e6eb5b;
+  text-align: left;
+}
+
+table thead tr {
+  border-bottom: 1px solid var(--extra-light-gray-color);
+}
+
+table thead tr th {
+  color: var(--light-gray-color);
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--extra-light-gray-color);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.table-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@media (max-width: 750px) {
+  table {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  table,
+  th,
+  td {
+    padding: 0.5rem 0;
+  }
+
+  table td:not(td.table-action) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  table td::before {
+    content: attr(title);
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  table tr.table-content {
+    background: #ffff;
+    border-radius: 0.3rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  tr.table-content + tr.table-content {
+    margin-top: 1rem;
+  }
+
+  table thead {
+    display: none;
+  }
+}
+
 @media (min-width: 900px) {
   .card-container {
     flex-direction: row;
@@ -524,7 +730,7 @@ footer {
 
   header.main-header,
   .main-content {
-    margin-left: 200px;
+    padding-left: calc(200px + 1rem);
   }
 
   .banner {

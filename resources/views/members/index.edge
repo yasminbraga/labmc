@@ -1,26 +1,35 @@
 @layout('layouts/main')
 
+@set('title', 'Membros')
+
 @section('main')
-<header>
-
-</header>
-
 <table>
-  <thead>
+  <thead class="table-head">
     <tr>
       <th>Nome</th>
       <th>Email</th>
       <th>Lattes</th>
       <th>Curso</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     @each(member in members)
-    <tr>
-      <th>{{member.name}}</th>
-      <th>{{member.email}}</th>
-      <th>{{member.lattes}}</th>
-      <th>{{member.course}}</th>
+    <tr class="table-content">
+      <td title="Nome">{{member.name}}</td>
+      <td title="Email">{{member.email}}</td>
+      <td title="Lattes">{{member.lattes}}</td>
+      <td title="Curso">{{member.course}}</td>
+      <td class="table-action">
+        <a href="{{route('MembersController.edit', {id: member.id})}}">
+          <i data-feather="edit" class="feather-green"></i>
+        </a>
+        <form action="{{route('MembersController.destroy', {id: member.id})}}?_method=DELETE" method="post">
+          <button class="destroy-btn">
+            <i data-feather="trash" class="feather-red"></i>
+          </button>
+        </form>
+      </td>
     </tr>
     @endeach
   </tbody>
