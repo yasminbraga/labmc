@@ -1,12 +1,10 @@
 @layout('layouts/main')
 
-@section('main')
-{{-- <header>
-  <h1>Orientações</h1>
-</header> --}}
+@set('title', 'Orientações')
 
+@section('main')
 <table>
-  <thead>
+  <thead class="table-head">
     <tr>
       <th>Título</th>
       <th>Tipo</th>
@@ -20,18 +18,22 @@
   </thead>
   <tbody>
     @each(orientation in orientations)
-    <tr>
-      <td>{{orientation.title}}</td>
-      <td>{{orientation.type}}</td>
-      <td>{{orientation.student.name}}</td>
-      <td>{{orientation.advisor.name}}</td>
-      <td>{{orientation.secondaryAdvisor ? orientation.secondaryAdvisor.name : '-'}}</td>
-      <td>{{orientation.period}}</td>
-      <td>{{orientation.fomentation ?? '-'}}</td>
-      <td>
-        <a href="{{route('OrientationsController.edit', {id: orientation.id})}}">editar</a>
+    <tr class="table-content">
+      <td title="Título">{{orientation.title}}</td>
+      <td title="Tipo">{{orientation.type}}</td>
+      <td title="Aluno">{{orientation.student.name}}</td>
+      <td title="Orientador">{{orientation.advisor.name}}</td>
+      <td title="Coorientador">{{orientation.secondaryAdvisor ? orientation.secondaryAdvisor.name : '-'}}</td>
+      <td title="Período">{{orientation.period}}</td>
+      <td title="Fomento">{{orientation.fomentation ?? '-'}}</td>
+      <td class="table-action">
+        <a href="{{route('OrientationsController.edit', {id: orientation.id})}}">
+          <i data-feather="edit" class="feather-green"></i>
+        </a>
         <form action="{{route('OrientationsController.destroy', {id: orientation.id})}}?_method=DELETE" method="post">
-          <button>Deletar</button>
+          <button class="destroy-btn">
+            <i data-feather="trash" class="feather-red"></i>
+          </button>
         </form>
       </td>
     </tr>
