@@ -1,0 +1,36 @@
+@layout('layouts/main')
+
+@section('main')
+
+@set('title', 'Usuários')
+
+<div class="card">
+  <h3>Adicionar usuário</h3>
+
+  <form action="{{ route('UsersController.store') }}" method="post">
+    @include('users/fields')
+
+    <section class="field">
+      <label for="password">Senha</label>
+      <input class="input-container" type="password" name="password" placeholder="Senha" id="password">
+      @if( flashMessages.has(`errors.password`))
+      <p class="field-error">
+        {{flashMessages.get(`errors.password`)}}
+      </p>
+      @endif
+    </section>
+
+    <section class="field">
+      <label for="password-confirmation">Confirme a senha</label>
+      <input class="input-container" type="password" name="passwordConfirmation" placeholder="Senha"
+        id="password-confirmation">
+      @if( flashMessages.has(`errors.passwordConfirmation`))
+      <p class="field-error">
+        {{flashMessages.get(`errors.passwordConfirmation`)}}
+      </p>
+      @endif
+    </section>
+    <button class="btn">Salvar</button>
+  </form>
+</div>
+@end

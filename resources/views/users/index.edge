@@ -1,33 +1,30 @@
 @layout('layouts/main')
 
-@set('title', 'Membros')
+@set('title', 'Usuários')
 
 @section('main')
 <section class="action-section">
-  <a class="btn primary-link" href="{{route('/members/create')}}">Novo membro</a>
+  <a class="btn primary-link" href="{{route('/users/create')}}">Novo usuário</a>
 </section>
+
 <table>
   <thead class="table-head">
     <tr>
       <th>Nome</th>
       <th>Email</th>
-      <th>Lattes</th>
-      <th>Curso</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    @each(member in members)
+    @each(user in users)
     <tr class="table-content">
-      <td title="Nome">{{member.name}}</td>
-      <td title="Email">{{member.email}}</td>
-      <td title="Lattes">{{member.lattes}}</td>
-      <td title="Curso">{{member.course}}</td>
+      <td title="Nome">{{user.name}}</td>
+      <td title="Email">{{user.email}}</td>
       <td class="table-action">
-        <a href="{{route('MembersController.edit', {id: member.id})}}">
+        <a href="{{route('UsersController.edit', {id: user.id})}}">
           <i data-feather="edit" class="feather-green"></i>
         </a>
-        <form action="{{route('MembersController.destroy', {id: member.id})}}?_method=DELETE" method="post">
+        <form action="{{route('UsersController.destroy', {id: user.id})}}?_method=DELETE" method="post">
           <button class="destroy-btn">
             <i data-feather="trash" class="feather-red"></i>
           </button>

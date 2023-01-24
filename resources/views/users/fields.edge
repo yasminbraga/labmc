@@ -1,0 +1,13 @@
+@!textField({
+name: 'name',
+id: 'name',
+label: 'Nome',
+value: flashMessages.get('name') || user?.name || '',
+})
+
+@!textField({
+name: 'email',
+id: 'email',
+value: flashMessages.get('email') || user?.email || '',
+label: 'Email'
+})

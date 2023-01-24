@@ -27,17 +27,18 @@ Route.post('/logout', async ({ auth, response }) => {
   response.redirect('/login')
 })
 
-Route.group(() => {
-  Route.get('/', async ({ view }) => {
-    return view.render('home')
-  })
-  Route.resource('members', 'MembersController')
-  Route.resource('orientations', 'OrientationsController')
-}).middleware(['auth'])
-
-Route.get('/landing', async ({ view }) => {
+Route.get('/', async ({ view }) => {
   return view.render('landingpage/home')
 })
+
+Route.group(() => {
+  Route.resource('members', 'MembersController')
+  Route.resource('orientations', 'OrientationsController')
+  Route.resource('users', 'UsersController')
+  Route.get('account', 'UsersController.account')
+  Route.get('change-password', 'UsersController.changePassword')
+  Route.post('change-password', 'UsersController.updatePassword')
+}).middleware(['auth'])
 
 Route.group(() => {
   Route.get('members', 'MembersController.index')

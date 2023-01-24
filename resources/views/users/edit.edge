@@ -1,0 +1,15 @@
+@layout('layouts/main')
+
+@section('main')
+
+@set('title', 'Usuários')
+
+<div class="card">
+  <h3>Editar usuário</h4>
+
+    <form action="{{ route('UsersController.update', {id: user.id}) }}?_method=PUT" method="post">
+      @include('users/fields')
+      <button class="btn">Salvar</button>
+    </form>
+</div>
+@end
