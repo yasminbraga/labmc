@@ -6,24 +6,12 @@ export default class SessionsController {
   }
   public async store({ auth, request, response, session }: HttpContextContract) {
     const { email, password } = request.body()
-    console.log(email)
     try {
       await auth.use('web').attempt(email, password)
-      return response.redirect('/')
+      return response.redirect('/account')
     } catch (error) {
       console.error(error)
       return response.redirect().back()
     }
   }
-
-  // public async destroy({ auth, response, session }: HttpContextContract) {
-  //   try {
-  //     session.clear()
-  //     await auth.use('web').logout()
-  //     return response.redirect().toRoute('SessionsController.index')
-  //   } catch (error) {
-  //     console.error(error)
-  //     return response.redirect().back()
-  //   }
-  // }
 }

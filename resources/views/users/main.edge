@@ -1,0 +1,13 @@
+@layout('layouts/main')
+
+@section('main')
+
+@set('title', 'Minha conta')
+
+<div class="card">
+  <h3>{{ auth?.user?.name || '-' }}</h4>
+
+    <p>{{auth.user.email}}</p>
+    <a class="btn primary-link" href="{{route('/change-password')}}">Alterar senha</a>
+</div>
+@end

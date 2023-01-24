@@ -16,6 +16,10 @@
       <i data-feather="file-text" class="feather-16"></i>
       Projetos
     </a>
+    <a href="{{route('/users')}}" class="nav-link">
+      <i data-feather="file-text" class="feather-16"></i>
+      Logins
+    </a>
   </nav>
 
   <footer class="sidebar-footer">
@@ -26,12 +30,19 @@
       <h5>{{ auth?.user?.name || '-' }}</h5>
     </div>
 
-    <form method="POST" action="{{ route('/logout')}}">
-      <button type="submit" class="logout-button">
-        sair
-        <i data-feather="log-out" class="feather-16"></i>
-      </button>
-    </form>
+    <div class="footer-actions">
+      <a href="{{route('/account', {id: auth.user.id})}}" class="account">
+        <i data-feather="user" class="feather-16"></i>
+      </a>
+
+      <form method="POST" action="{{ route('/logout')}}">
+        <button type="submit" class="logout-button">
+          sair
+          <i data-feather="log-out" class="feather-16"></i>
+        </button>
+      </form>
+    </div>
+
   </footer>
 </section>
 <div class="sidebar-overlay"></div>

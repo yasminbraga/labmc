@@ -9,7 +9,7 @@
 
   <form action="{{ route('MembersController.update', {id: member.id}) }}?_method=PUT" method="post">
     @include('members/fields')
-    <button>Salvar</button>
+    <button class="btn">Salvar</button>
   </form>
 </div>
 @end
