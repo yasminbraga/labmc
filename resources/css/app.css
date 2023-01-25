@@ -389,6 +389,7 @@ img.logo {
 
 .section-content {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 1rem;
 }
@@ -405,6 +406,17 @@ a.link {
   justify-content: center;
   align-items: center;
   font-size: 14px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.footer-link:hover {
+  color: #1ea71c;
 }
 
 .area-cards {
