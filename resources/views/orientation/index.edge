@@ -23,7 +23,7 @@
     @each(orientation in orientations)
     <tr class="table-content">
       <td title="Título">{{orientation.title}}</td>
-      <td title="Tipo">{{orientation.type}}</td>
+      <td title="Tipo">{{orientation.translatedType}}</td>
       <td title="Aluno">{{orientation.student.name}}</td>
       <td title="Orientador">{{orientation.advisor.name}}</td>
       <td title="Coorientador">{{orientation.secondaryAdvisor ? orientation.secondaryAdvisor.name : '-'}}</td>
